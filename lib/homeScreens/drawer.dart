@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+
 class DrawerScreen extends StatelessWidget {
   const DrawerScreen({ Key? key }) : super(key: key);
 
@@ -31,20 +33,30 @@ class DrawerScreen extends StatelessWidget {
               )
             ],
           ),
-          Card(
-              child: ListTile(
-                leading:Icon(Icons.login),
-                title: Text("Login"),
+          GestureDetector(
+            onTap: (){
+              ///login screen
+            },
+            child: Card(
+                child: ListTile(
+                  leading:Icon(Icons.login),
+                  title: Text("Login"),
+                ),
+                
               ),
-              
-            ),
-        Card(
-              child: ListTile(
-                leading:Icon(Icons.app_registration_outlined),
-                title: Text("Signup"),
+          ),
+        GestureDetector(
+          onTap: (){
+            //signup screen
+          },
+          child: Card(
+                child: ListTile(
+                  leading:Icon(Icons.app_registration_outlined),
+                  title: Text("Signup"),
+                ),
+                
               ),
-              
-            )
+        )
         ]),
       ),
     );
