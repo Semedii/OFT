@@ -31,3 +31,39 @@ class matches extends StatelessWidget {
           ],);
   }
 }
+
+class Lineup extends StatefulWidget {
+ 
+  String name1;
+  String name2;
+  Lineup(this.name1, this.name2);
+  @override
+  _LineupState createState() => _LineupState();
+}
+
+class _LineupState extends State<Lineup> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+         Row( 
+                
+                children: [
+                   Icon(Icons.sports_football),
+                    Text(widget.name1),
+                ]
+              ),
+              Spacer(
+
+              ),
+               Row(
+             
+                    children: [
+                    Icon(Icons.sports_football),
+                    Text(widget.name2)
+                  ],
+                  ),
+      ],
+    );
+  }
+}
