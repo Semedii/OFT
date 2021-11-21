@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:term_roject/Login%20Screens/screens/signUpScreen.dart';
 import 'package:term_roject/Login%20Screens/widgets/inputTextWidget.dart';
 
-//backgroundColor: Color(0xff12c387),
-//backgroundColor: Color(0xFF5a5a5a),
-
 class LoginScreen extends StatefulWidget {
   LoginScreen() : super();
 

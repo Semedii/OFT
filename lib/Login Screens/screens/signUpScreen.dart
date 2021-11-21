@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:term_roject/Login%20Screens/widgets/inputTextWidget.dart';
-import 'loginScreen.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen() : super();

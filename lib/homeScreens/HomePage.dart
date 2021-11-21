@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:term_roject/Discussions%20Screen/Discussion.dart';
-import 'package:term_roject/Favourite%20Screen/fav.dart';
-import 'package:term_roject/newsScreen/news/News.dart';
-import '../nav.dart';
 import 'MatchDetail.dart';
 import 'Widgets.dart';
 import 'drawer.dart';

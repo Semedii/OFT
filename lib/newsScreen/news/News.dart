@@ -5,9 +5,6 @@ import 'package:term_roject/newsScreen/Screens/secondScreen.dart';
 import 'package:term_roject/newsScreen/Screens/thirdScreen.dart';
 
 
-
-
-
 class HomeNews  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
