@@ -51,15 +51,16 @@ class HomeNews  extends StatelessWidget {
                     child : Image.asset('images/photo1.jpg'),
 
                   ),
-                  Container (
-                    padding: EdgeInsets.all(20.0),
-                    height: 110.0,
-                    width : 200,
-                    child : Text(
-                      'Lineol messi scored a screamer in the Uefa Cup against poor form Man Utd',
-                      style : TextStyle (
-                        fontSize: 13.0,
-                        color : Colors.white,
+                  Expanded(
+                    child: Container (
+                      padding: EdgeInsets.all(20.0),
+                    
+                      child : Text(
+                        'Lineol messi scored a screamer in the Uefa Cup against poor form Man Utd',
+                        style : TextStyle (
+                          fontSize: 13.0,
+                          color : Colors.white,
+                        ),
                       ),
                     ),
                   )
@@ -86,15 +87,16 @@ class HomeNews  extends StatelessWidget {
                     child : Image.asset('images/photo2.jpg'),
 
                   ),
-                  Container (
-                    padding: EdgeInsets.all(20.0),
-                    height: 110.0,
-                    width : 200,
-                    child : Text(
-                      'Credible sources state that Cr7 is  questioning his choice on coming to Man UTD',
-                      style : TextStyle (
-                        fontSize: 13.0,
-                        color : Colors.white,
+                  Expanded(
+                    child: Container (
+                      padding: EdgeInsets.all(20.0),
+                     
+                      child : Text(
+                        'Credible sources state that Cr7 is  questioning his choice on coming to Man UTD',
+                        style : TextStyle (
+                          fontSize: 13.0,
+                          color : Colors.white,
+                        ),
                       ),
                     ),
                   )
@@ -122,15 +124,16 @@ class HomeNews  extends StatelessWidget {
                     child : Image.asset('images/photo33.jpg'),
 
                   ),
-                  Container (
-                    padding: EdgeInsets.all(10.0),
-                    height: 110.0,
-                    width : 200,
-                    child : Text(
-                      'Karim Benzema is nominated for the infamous Balondor prize as the player shows remarkable peformance this season ',
-                      style : TextStyle (
-                        fontSize: 13.0,
-                        color : Colors.white,
+                  Expanded(
+                    child: Container (
+                      padding: EdgeInsets.all(10.0),
+                    
+                      child : Text(
+                        'Karim Benzema is nominated for the infamous Balondor prize as the player shows remarkable peformance this season ',
+                        style : TextStyle (
+                          fontSize: 13.0,
+                          color : Colors.white,
+                        ),
                       ),
                     ),
                   )
@@ -159,17 +162,18 @@ class HomeNews  extends StatelessWidget {
                     child : Image.asset('images/photo4.jpg'),
 
                   ),
-                  Container (
-                    padding: EdgeInsets.all(10.0),
-
-                    height: 110.0,
-                    width : 200,
-                    child : Text(
-                      'Afghanistan’s national soccer team played a rare match this week. But what, and whom, does the team represent?',
-                      style : TextStyle (
-                        fontSize: 13.0,
-                        color : Colors.white,
-
+                  Expanded(
+                    child: Container (
+                      padding: EdgeInsets.all(10.0),
+                  
+                    
+                      child : Text(
+                        'Afghanistan’s national soccer team played a rare match this week. But what, and whom, does the team represent?',
+                        style : TextStyle (
+                          fontSize: 13.0,
+                          color : Colors.white,
+                  
+                        ),
                       ),
                     ),
                   )
