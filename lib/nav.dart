@@ -20,8 +20,8 @@ class _NavState extends State<Nav> {
   final _pageOptions = [
     MyHomePage(title: 'OTF Score'),
     HomeNews(),
-    discussion(),
-    fav(),
+    const discussion(),
+    const fav(),
   ];
 
   @override
@@ -30,7 +30,7 @@ class _NavState extends State<Nav> {
         backgroundColor: Colors.white,
         body: _pageOptions[selectedPage],
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.futbol),
             label: 'Matches',

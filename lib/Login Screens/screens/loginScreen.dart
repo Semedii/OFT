@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:term_roject/Login%20Screens/screens/signUpScreen.dart';
 import 'package:term_roject/Login%20Screens/widgets/inputTextWidget.dart';
 
+import '../../nav.dart';
+
 class LoginScreen extends StatefulWidget {
   LoginScreen() : super();
 
@@ -89,7 +91,7 @@ class _SearchScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
-                      print("Logged In");
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Nav()));
                     }
                   },
                   style: ElevatedButton.styleFrom(

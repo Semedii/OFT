@@ -20,6 +20,7 @@ class _discussionState extends State<discussion> {
       ),
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text('Discussions',
           style: TextStyle(
               color: Colors.black,

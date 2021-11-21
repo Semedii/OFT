@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blueGrey,
       ),
-      home: SplashScreen(), //MyHomePage(title: 'OTF Score'),
+      home: const SplashScreen(), //MyHomePage(title: 'OTF Score'),
     );
   }
 }

@@ -7,6 +7,11 @@ class fourthScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF5a5a5a),
       appBar:  AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        automaticallyImplyLeading: false,
         backgroundColor: Color(0xff12c387),
         title : Text(
           'News',

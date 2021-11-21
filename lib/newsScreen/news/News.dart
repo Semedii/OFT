@@ -12,6 +12,7 @@ class HomeNews  extends StatelessWidget {
       backgroundColor: Color(0xFF5a5a5a),
 
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color(0xff12c387),
         title : Text(
           'News',
