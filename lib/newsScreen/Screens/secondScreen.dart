@@ -5,9 +5,9 @@ class secondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black26,
+      backgroundColor: Color(0xFF5a5a5a),
       appBar:  AppBar(
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Color(0xff12c387),
         title : Text(
           'News',
           style: TextStyle(
@@ -27,10 +27,10 @@ class secondScreen extends StatelessWidget {
         children: [
 
           Container(
-            child: Image.asset("assets/photo1.jpg"),
+            child: Image.asset("images/photo1.jpg"),
           ),
           Container(
-            child: Center(child: Text("Lineol messi scored a screamer in the Uefa Cup against shithole Man Utd",
+            child: Center(child: Text("Lineol messi scored a screamer in the Uefa Cup against poor form Man Utd",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
             ),
             ),

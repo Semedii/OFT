@@ -14,24 +14,24 @@ class _discussionState extends State<discussion> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: Color(0xFFcced00),
-          scaffoldBackgroundColor: Colors.greenAccent
+          primaryColor: Color(0xFF5a5a5a),
+          scaffoldBackgroundColor:Color(0xFF5a5a5a)
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Discussion Screen'),
+          title: Text('Discussions',
+          style: TextStyle(
+              color: Colors.black,
+          ),),
           centerTitle: true,
-          backgroundColor: Colors.lightGreen,
+          backgroundColor: Color(0xff12c387),
         ),
         body:
 
         ListView(
-
           children: <Widget>[
-
-
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Image(
@@ -40,7 +40,10 @@ class _discussionState extends State<discussion> {
             ),
             Padding(
               padding: const EdgeInsets.all(14.0),
-              child: Text('down below you can leave your comments below for your selected match'),
+              child: Text('Write your comments about the match down below',
+              style: TextStyle(
+                color: Colors.white,
+              ),),
 
             ),
             Row(
@@ -61,8 +64,8 @@ class _discussionState extends State<discussion> {
                 FlatButton(onPressed: ()
 
                 {},
-                  child: Text('post'),
-                  color: Colors.lightBlue,
+                  child: Text('Post'),
+                  color: Color(0xff12c387),
                 )
               ],
             ),
@@ -85,38 +88,6 @@ class _discussionState extends State<discussion> {
 
 
           ],
-        ),
-
-        bottomNavigationBar: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.futbol),
-              label: 'Matches',
-              backgroundColor: Color(0xff12c387),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.newspaper),
-              label: 'News',
-              backgroundColor: Color(0xFFf0725c),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.trophy),
-              label: 'Leagues',
-              backgroundColor: Color(0xFFf0725c),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.star),
-              label: 'Favorites',
-              backgroundColor: Color(0xfff0725c),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
-              label: 'More',
-              backgroundColor: Color(0xffcced00),
-            ),
-          ],
-          selectedItemColor: Colors.yellowAccent,
-          showUnselectedLabels: true,
         ),
 
 

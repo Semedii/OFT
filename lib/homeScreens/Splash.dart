@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:project/Screens/HomePage.dart';
+import '../nav.dart';
+import 'HomePage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({ Key? key }) : super(key: key);
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   //this function will destroy the splash screen when the time is up. and it will direct you to the homepage
   void onclose(){
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => MyHomePage(title: 'OTF Score')));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Nav()));
   }
   @override
   Widget build(BuildContext context) {

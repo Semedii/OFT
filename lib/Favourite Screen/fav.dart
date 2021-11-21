@@ -9,12 +9,14 @@ class fav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff5a5a5a),
       appBar: AppBar(
         backgroundColor: Color(0xFF12c387),
         title: const Text(
           'Favourites',
           textAlign: TextAlign.left,
           style: TextStyle(
+            color: Colors.black,
             fontSize: 25.0,
           ),
         ),
@@ -25,13 +27,15 @@ class fav extends StatelessWidget {
               alignment: Alignment.center,
               child: const Text(
                 'Edit',
-                style: TextStyle(fontSize: 25.0),
+                style: TextStyle(fontSize: 25.0,
+                color: Colors.black),
               ),
             ),
           ),
           const Padding(
             padding: EdgeInsets.all(10.0),
-            child: Icon(Icons.add_circle_outline_rounded),
+            child: Icon(Icons.add_circle_outline_rounded,
+            color: Colors.black,),
           ),
         ],
       ),
@@ -130,37 +134,7 @@ class fav extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.futbol),
-            label: 'Matches',
-            backgroundColor: Color(0xff12c387),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.newspaper),
-            label: 'News',
-            backgroundColor: Color(0xFFf0725c),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.trophy),
-            label: 'Leagues',
-            backgroundColor: Color(0xFFf0725c),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.star),
-            label: 'Favorites',
-            backgroundColor: Color(0xfff0725c),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: 'More',
-            backgroundColor: Color(0xffcced00),
-          ),
-        ],
-        selectedItemColor: Colors.yellowAccent,
-        showUnselectedLabels: true,
-      ),
+
     );
   }
 }

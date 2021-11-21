@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:login_screens_project/screens/signUpScreen.dart';
-import 'package:login_screens_project/widgets/inputTextWidget.dart';
+import 'package:term_roject/Login%20Screens/screens/signUpScreen.dart';
+import 'package:term_roject/Login%20Screens/widgets/inputTextWidget.dart';
 
-
+//backgroundColor: Color(0xff12c387),
+//backgroundColor: Color(0xFF5a5a5a),
 
 class LoginScreen extends StatefulWidget {
   LoginScreen() : super();
@@ -95,7 +96,7 @@ class _SearchScreenState extends State<LoginScreen> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color (0xFF5a5a5a),
+                    primary: Color(0xff12c387),
                     elevation: 0.0,
                     minimumSize: Size(screenWidth, 150),
                     padding: EdgeInsets.symmetric(horizontal: 30),
@@ -107,11 +108,11 @@ class _SearchScreenState extends State<LoginScreen> {
                     decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                              color: Color (0xFFcced00),
+                              color: Color(0xff12c387),
                               offset: const Offset(1.1, 1.1),
                               blurRadius: 3.0),
                         ],
-                        color: Color (0xFFcced00),
+                        color: Color(0xff12c387),
                         borderRadius: BorderRadius.circular(10.0)),
                     child: Container(
                       alignment: Alignment.center,
@@ -129,83 +130,6 @@ class _SearchScreenState extends State<LoginScreen> {
       SizedBox(
         height: 15.0,
       ),
-      Wrap(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0, right: 10.0, top: 15.0),
-            child: Container(
-              decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.grey, //Color(0xfff05945),
-                        offset: const Offset(0, 0),
-                        blurRadius: 5.0),
-                  ],
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(12.0)),
-              width: (screenWidth / 2) - 40,
-              height: 55,
-              child: Material(
-                borderRadius: BorderRadius.circular(12.0),
-                child: InkWell(
-                  onTap: () {
-                    print("facebook tapped");
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("images/fb.png", fit: BoxFit.cover),
-                        SizedBox(
-                          width: 7.0,
-                        ),
-                        Text("Sign in with\nfacebook")
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10.0, right: 30.0, top: 15.0),
-            child: Container(
-              decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                        color: Colors.grey, //Color(0xfff05945),
-                        offset: const Offset(0, 0),
-                        blurRadius: 5.0),
-                  ],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12.0)),
-              width: (screenWidth / 2) - 40,
-              height: 55,
-              child: Material(
-                borderRadius: BorderRadius.circular(12.0),
-                child: InkWell(
-                  onTap: () {
-                    print("google tapped");
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Image.asset("images/google.png",
-                            fit: BoxFit.cover),
-                        SizedBox(
-                          width: 7.0,
-                        ),
-                        Text("Sign in with\nGoogle")
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
       SizedBox(
         height: 15.0,
       ),
@@ -214,17 +138,23 @@ class _SearchScreenState extends State<LoginScreen> {
       backgroundColor: Color (0xFF5a5a5a),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            automaticallyImplyLeading: false,
             pinned: _pinned,
             snap: _snap,
             floating: _floating,
             expandedHeight: coverHeight - 250,
-            backgroundColor: Color(0xFFcced00),
+            backgroundColor:Color(0xff12c387),
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
             ),
@@ -236,7 +166,7 @@ class _SearchScreenState extends State<LoginScreen> {
                      
                       ),
                   gradient: LinearGradient(
-                      colors: <Color>[Color(0xFFcced00), Color(0xFFcced00)])
+                      colors: <Color>[Color(0xff12c387), Color(0xff12c387)])
                   
                   ),
               width: screenWidth,
@@ -271,7 +201,7 @@ class _SearchScreenState extends State<LoginScreen> {
         children: [
           new Container(
             height: 50.0,
-            color: Colors.grey[200],
+            color: Color(0xff12c387),
             child: Center(
                 child: Wrap(
               children: [
@@ -292,7 +222,7 @@ class _SearchScreenState extends State<LoginScreen> {
                   child: Text(
                     "Sign Up",
                     style: TextStyle(
-                      color: Colors.blue[800],
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),

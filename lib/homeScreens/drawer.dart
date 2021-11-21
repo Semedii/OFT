@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:term_roject/Login%20Screens/screens/loginScreen.dart';
+import 'package:term_roject/Login%20Screens/screens/signUpScreen.dart';
 
 
 class DrawerScreen extends StatelessWidget {
@@ -6,58 +8,63 @@ class DrawerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-       child: SafeArea(
-        child: Column(children: [
-         
-          Row(
-            children: [
-              
-              Expanded(
-                child: Container(
-                    height: 200,
-                   
-                    decoration: BoxDecoration(
-                      //this color is gradient just for decoration
-                      gradient: LinearGradient(
-                      
-    colors: [Color(0xFF000000), Color(0xFF161315), Color(0xFF241f23),
-    Color(0xFF302c33), Color(0xFF3b3a45), Color(0xFF464955),Color(0xFF515965),
-     Color(0xFF5d6974), Color(0xFF717d84),Color(0xFF889295),
-    ]),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(50, 70, 50, 50),
-                      child: Text("Login Page", style: TextStyle(fontSize: 40, color: Colors.white)),
-                    )),
-              )
-            ],
-          ),
+    return Theme(
+      data: Theme.of(context).copyWith(
+        canvasColor: Color(0xff5a5a5a), //This will change the drawer background to blue.
+        //other styles
+      ),
+      child: Drawer(
+         child: SafeArea(
+          child: Column(children: [
+
+            Row(
+              children: [
+
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(4),
+                    child: Container(
+                        height: 200,
+                        decoration: BoxDecoration(
+                          color: Color(0xff12c387),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(50, 70, 50, 50),
+                          child: Center(child: Text("Login Page", style: TextStyle(fontSize: 30, color: Colors.black))),
+                        )),
+                  ),
+                )
+              ],
+            ),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen(),
+                ));
+              },
+              child: Card(
+                  child: ListTile(
+                    tileColor: Color(0xff12c387),
+                    leading:Icon(Icons.login),
+                    title: Text("Login"),
+                  ),
+
+                ),
+            ),
           GestureDetector(
             onTap: (){
-              ///login screen
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpScreen(),
+              ));
             },
             child: Card(
-                child: ListTile(
-                  leading:Icon(Icons.login),
-                  title: Text("Login"),
+                  child: ListTile(
+                    tileColor: Color(0xff12c387),
+                    leading:Icon(Icons.app_registration_outlined),
+                    title: Text("Signup"),
+                  ),
                 ),
-                
-              ),
-          ),
-        GestureDetector(
-          onTap: (){
-            //signup screen
-          },
-          child: Card(
-                child: ListTile(
-                  leading:Icon(Icons.app_registration_outlined),
-                  title: Text("Signup"),
-                ),
-                
-              ),
-        )
-        ]),
+          )
+          ]),
+        ),
       ),
     );
   }

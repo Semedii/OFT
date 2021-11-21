@@ -5,9 +5,9 @@ class fifthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black26,
+      backgroundColor: Color(0xFF5a5a5a),
       appBar:  AppBar(
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Color(0xff12c387),
         title : Text(
           'News',
           style: TextStyle(
@@ -27,7 +27,7 @@ class fifthScreen extends StatelessWidget {
             children: [
 
               Container(
-                child: Image.asset("assets/photo4.jpg"),
+                child: Image.asset("images/photo4.jpg"),
               ),
               Container(
                 child: Center(child: Text("Afghanistan’s national soccer team played a rare match this week. But what, and whom, does the team represent?",

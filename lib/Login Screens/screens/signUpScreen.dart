@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_screens_project/widgets/inputTextWidget.dart';
+import 'package:term_roject/Login%20Screens/widgets/inputTextWidget.dart';
 import 'loginScreen.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color (0xFFcced00),
+      backgroundColor: Color(0xff12c387),
       appBar: AppBar(
         title: Text("Sign Up",
             style: TextStyle(
@@ -206,7 +206,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         if (_formKey.currentState!.validate()) {}
                       },
                       style: ElevatedButton.styleFrom(
-                        primary:  Color (0xFF5a5a5a),
+                        primary:  Color(0xff12c387),
                         elevation: 0.0,
                         minimumSize: Size(screenWidth, 150),
                         padding: EdgeInsets.symmetric(horizontal: 30),
@@ -218,11 +218,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         decoration: BoxDecoration(
                             boxShadow: <BoxShadow>[
                               BoxShadow(
-                                  color:  Color (0xFFcced00),
+                                  color:  Color(0xff12c387),
                                   offset: const Offset(1.1, 1.1),
                                   blurRadius: 2.0),
                             ],
-                            color: Color (0xFFcced00),
+                            color: Color(0xff12c387),
                             borderRadius: BorderRadius.circular(12.0)),
                         child: Container(
                           alignment: Alignment.center,

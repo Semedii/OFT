@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'Screens/fifthScreen.dart';
-import 'Screens/fourthScreen.dart';
-import 'Screens/thirdScreen.dart';
-import 'Screens/secondScreen.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:term_roject/newsScreen/Screens/fifthScreen.dart';
+import 'package:term_roject/newsScreen/Screens/fourthScreen.dart';
+import 'package:term_roject/newsScreen/Screens/secondScreen.dart';
+import 'package:term_roject/newsScreen/Screens/thirdScreen.dart';
 
 
 
 
 
-class Home  extends StatelessWidget {
+class HomeNews  extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black26,
+      backgroundColor: Color(0xFF5a5a5a),
 
       appBar: AppBar(
         backgroundColor: Color(0xff12c387),
@@ -51,7 +50,7 @@ class Home  extends StatelessWidget {
 
                     height: 150.0,
                     width:   200.0,
-                    child : Image.asset('assets/photo1.jpg'),
+                    child : Image.asset('images/photo1.jpg'),
 
                   ),
                   Container (
@@ -59,7 +58,7 @@ class Home  extends StatelessWidget {
                     height: 110.0,
                     width : 200,
                     child : Text(
-                      'Lineol messi scored a screamer in the Uefa Cup against shithole Man Utd',
+                      'Lineol messi scored a screamer in the Uefa Cup against poor form Man Utd',
                       style : TextStyle (
                         fontSize: 13.0,
                         color : Colors.white,
@@ -86,7 +85,7 @@ class Home  extends StatelessWidget {
 
                     height: 150.0,
                     width:   200.0,
-                    child : Image.asset('assets/photo2.jpg'),
+                    child : Image.asset('images/photo2.jpg'),
 
                   ),
                   Container (
@@ -122,7 +121,7 @@ class Home  extends StatelessWidget {
 
                     height: 150.0,
                     width:   200.0,
-                    child : Image.asset('assets/photo33.jpg'),
+                    child : Image.asset('images/photo33.jpg'),
 
                   ),
                   Container (
@@ -159,7 +158,7 @@ class Home  extends StatelessWidget {
 
                     height: 150.0,
                     width:   200.0,
-                    child : Image.asset('assets/photo4.jpg'),
+                    child : Image.asset('images/photo4.jpg'),
 
                   ),
                   Container (
@@ -192,38 +191,6 @@ class Home  extends StatelessWidget {
         ),
 
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.futbol),
-            label: 'Matches',
-            backgroundColor: Color(0xff12c387),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.newspaper),
-            label: 'News',
-            backgroundColor: Color(0xFFf0725c),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.trophy),
-            label: 'Leagues',
-            backgroundColor: Color(0xFFf0725c),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.star),
-            label: 'Favorites',
-            backgroundColor: Color(0xfff0725c),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: 'More',
-            backgroundColor: Color(0xffcced00),
-          ),
-        ],
-        selectedItemColor: Colors.yellowAccent,
-        showUnselectedLabels: true,
-      ),
-
 
     );
   }

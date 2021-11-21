@@ -49,8 +49,13 @@ class _LineupState extends State<Lineup> {
          Row( 
                 
                 children: [
-                   Icon(Icons.sports_football),
-                    Text(widget.name1),
+                   Icon(Icons.sports_soccer,
+                     color: Colors.white,),
+                    Text(widget.name1,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                    )
                 ]
               ),
               Spacer(
@@ -59,8 +64,12 @@ class _LineupState extends State<Lineup> {
                Row(
              
                     children: [
-                    Icon(Icons.sports_football),
-                    Text(widget.name2)
+                    Icon(Icons.sports_soccer,
+                    color: Colors.white,),
+                    Text(widget.name2,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),)
                   ],
                   ),
       ],
