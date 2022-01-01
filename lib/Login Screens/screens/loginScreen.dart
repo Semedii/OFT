@@ -1,8 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:term_roject/Login%20Screens/screens/signUpScreen.dart';
 import 'package:term_roject/Login%20Screens/widgets/inputTextWidget.dart';
-
 import '../../nav.dart';
+import '../../wrapper.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen() : super();
@@ -15,6 +16,9 @@ class _SearchScreenState extends State<LoginScreen> {
   final TextEditingController _pwdController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  String error = '';
+  String goodNews = '';
+  final FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -90,8 +94,22 @@ class _SearchScreenState extends State<LoginScreen> {
                 height: 55.0,
                 child: ElevatedButton(
                   onPressed: () async {
+                    FocusScope.of(context).requestFocus(FocusNode());
                     if (_formKey.currentState!.validate()) {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Nav()));
+                     try {
+                      await auth.signInWithEmailAndPassword(
+                           email: _emailController.text,
+                           password: _pwdController.text);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) =>Wrapper() ),
+                      );
+                     } catch (e){
+                       setState(() {
+                         error='Could not sign in with these Credentials';
+                       });
+
+                     }
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -121,6 +139,26 @@ class _SearchScreenState extends State<LoginScreen> {
                         style: TextStyle(color: Colors.black, fontSize: 25),
                       ),
                     ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  error,
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  goodNews,
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontSize: 20,
                   ),
                 ),
               ),
@@ -198,13 +236,13 @@ class _SearchScreenState extends State<LoginScreen> {
       ),
       bottomNavigationBar: Stack(
         children: [
-          new Container(
+          Container(
             height: 50.0,
             color: Color(0xff12c387),
             child: Center(
                 child: Wrap(
               children: [
-                Text(
+                const Text(
                   "Don't have an account?  ",
                   style: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
@@ -212,13 +250,12 @@ class _SearchScreenState extends State<LoginScreen> {
                 Material(
                     child: InkWell(
                   onTap: () {
-                    print("sign up tapped");
                     Navigator.push(
                       context,
                         MaterialPageRoute(builder: (context) =>SignUpScreen() ),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     "Sign Up",
                     style: TextStyle(
                       color: Colors.black,

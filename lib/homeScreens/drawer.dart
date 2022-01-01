@@ -10,7 +10,7 @@ class DrawerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: Color(0xff5a5a5a), //This will change the drawer background to blue.
+        canvasColor: const Color(0xff5a5a5a),
         //other styles
       ),
       child: Drawer(
@@ -25,11 +25,11 @@ class DrawerScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(4),
                     child: Container(
                         height: 200,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Color(0xff12c387),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(50, 70, 50, 50),
+                        child: const Padding(
+                          padding: EdgeInsets.fromLTRB(50, 70, 50, 50),
                           child: Center(child: Text("Login Page", style: TextStyle(fontSize: 30, color: Colors.black))),
                         )),
                   ),
@@ -41,7 +41,7 @@ class DrawerScreen extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen(),
                 ));
               },
-              child: Card(
+              child: const Card(
                   child: ListTile(
                     tileColor: Color(0xff12c387),
                     leading:Icon(Icons.login),
@@ -55,7 +55,7 @@ class DrawerScreen extends StatelessWidget {
               Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpScreen(),
               ));
             },
-            child: Card(
+            child: const Card(
                   child: ListTile(
                     tileColor: Color(0xff12c387),
                     leading:Icon(Icons.app_registration_outlined),

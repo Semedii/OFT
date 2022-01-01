@@ -62,7 +62,7 @@ class _discussionState extends State<discussion> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(8.0)
                     ),
-                    child: TextField(),
+
                   ),
                 ),
                 Expanded(

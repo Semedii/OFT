@@ -30,24 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
             
            child: Image.asset("images/wal.jpg", fit: BoxFit.cover,),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-            Expanded(
-              flex: 2,
-                          child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   CircularProgressIndicator(
-                     backgroundColor: Colors.white,
-                   ),
-                   Text("Connecting to OFTScore", style: TextStyle(color: Colors.white, fontSize: 20),)
-                  ],
-                ),
-              ),
-            )
-          ],)
+
       ],)
     );
   }
