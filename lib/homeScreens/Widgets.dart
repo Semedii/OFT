@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class matches extends StatelessWidget {
   String Team1;
   String Team2;
-  matches(this.Team1, this.Team2);
+  String imageurl;
+  matches({required this.Team1,required this.Team2,required this.imageurl});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,8 @@ class matches extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child:
-          Image.asset("images/game.jpg", fit: BoxFit.cover)
+
+          Image.network(imageurl, fit: BoxFit.cover)
           )),
           Positioned.fill(
             bottom: 20,
@@ -64,12 +66,13 @@ class _LineupState extends State<Lineup> {
                Row(
              
                     children: [
-                    Icon(Icons.sports_soccer,
-                    color: Colors.white,),
+                    
                     Text(widget.name2,
                     style: TextStyle(
                       color: Colors.white,
-                    ),)
+                    ),),
+                    Icon(Icons.sports_soccer,
+                    color: Colors.white,),
                   ],
                   ),
       ],

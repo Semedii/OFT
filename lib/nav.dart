@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:term_roject/Discussions%20Screen/nonUserDiscussion.dart';
 
 import 'Discussions Screen/Discussion.dart';
 import 'Favourite Screen/fav.dart';
@@ -18,9 +19,9 @@ class _NavState extends State<Nav> {
   int selectedPage = 0;
 
   final _pageOptions = [
-    MyHomePage(title: 'OTF Score'),
-    HomeNews(),
-    const discussion(),
+    MyHomePage(),
+    UserNews(),
+    const nonUserDiscussion(),
     const fav(),
   ];
 

@@ -1,21 +1,50 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:term_roject/Model/LineUp.dart';
+
 import 'Widgets.dart';
+import 'package:http/http.dart' as http;
 
 class MatchDetailScreen extends StatefulWidget {
 
- String title;
-  MatchDetailScreen(this.title);
+ String Team1;
+ String Team2;
+ String ImageUrl;
+ String Time;
+ DateTime Date;
+ String Stadium;
+ String Referee;
+ String League;
+  MatchDetailScreen({
+    required this.Team1,
+    required this.Team2,
+    required this.ImageUrl,
+    required this.Date,
+    required this.Time,
+    required this.Stadium,
+    required this.Referee,
+    required this.League
+  });
+
+ 
+  
 
 @override
   _MatchDetailScreenState createState() => _MatchDetailScreenState();
 }
 
 class _MatchDetailScreenState extends State<MatchDetailScreen> {
- 
+
+  
+  
   @override
   Widget build(BuildContext context) {
+   
      Size size = MediaQuery.of(context).size;
     return Scaffold(
+      
       backgroundColor: Color(0xFF5a5a5a),
        appBar: AppBar(
          leading: IconButton(
@@ -24,10 +53,11 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
          ),
          automaticallyImplyLeading: false,
          backgroundColor: Color(0xff12c387),
-        title: Text(widget.title,
+        title: Text(widget.Team1+" vs "+widget.Team2,
         style: TextStyle(
           color: Colors.black
         ),),
+        
       ),
       body: 
       Container(
@@ -35,7 +65,7 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-            matches("Man united","Liverpool"),
+            matches(Team1: widget.Team1, Team2: widget.Team2, imageurl: widget.ImageUrl),
 
             Container(
           
@@ -59,7 +89,7 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
                   children: [
 
                     Icon(Icons.calendar_today),
-                    Text("Fri | 26 Nov 2021 | 10:45pm")
+                    Text("${DateFormat.yMMMd().format(widget.Date)} | ${widget.Time}")
                   ],
                 ),
                   ),
@@ -72,7 +102,7 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
                 child: Row(
                   children: [
                     Icon(Icons.sports_soccer),
-                    Text("Premiere League")
+                    Text(widget.League)
                   ],
                 ),
                  ),
@@ -84,7 +114,7 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
                 child:  Row(
                   children: [
                     Icon(Icons.place),
-                    Text("Old Trafford Stadium")
+                    Text(widget.Stadium)
                   ],
                 ),
                  ),
@@ -97,43 +127,16 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
                 child: Row(
                   children: [
                     Icon(Icons.male_outlined),
-                    Text("Anthony Taylor")
+                    Text(widget.Referee)
                   ],
                 ))
               ],),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-             // height: 20,
-             width: size.width,
-              color: Color(0xFF5a5a5a),
-              child: Center(child: Text("Line Up", style: TextStyle(color: Colors.white, fontSize: 20),)),
-            ),
-            Column(
-              //height: 180,
-              children: [ 
-                Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-                Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-                Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-               Lineup("Alisson", "Dean Henderson"),
-             
-              ]
-            )
-            
-           
-          ],),
-        ),
+         
+          
+            ]),
       ),
       
-    );
+    ));
   }
 }

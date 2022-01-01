@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:term_roject/homeScreens/homePageNormalUser.dart';
+
 import 'Discussions Screen/Discussion.dart';
 import 'Favourite Screen/fav.dart';
+import 'homeScreens/HomePage.dart';
 import 'newsScreen/news/News.dart';
 
 
@@ -17,8 +18,8 @@ class _NavNUState extends State<NavNU> {
   int selectedPage = 0;
 
   final _pageOptions = [
-    MyHomePageNU(title: 'OTF Score'),
-    HomeNews(),
+    MyHomePage(),//(title: 'OTF Score'),
+    UserNews(),
     const discussion(),
     const fav(),
   ];

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:term_roject/homeScreens/homePageAdmin.dart';
 
+
+import 'AdminScreens/HomePageAdmin.dart';
+import 'AdminScreens/NewsAdmin.dart';
 import 'Discussions Screen/Discussion.dart';
 import 'Favourite Screen/fav.dart';
 import 'newsScreen/news/News.dart';
@@ -18,8 +20,8 @@ class _NavAdminState extends State<NavAdmin> {
   int selectedPage = 0;
 
   final _pageOptions = [
-    MyHomePageAdmin(title: 'OTF Score'),
-    HomeNews(),
+    MyHomePageAdmin(),//(title: 'OTF Score'),
+    AdminNews(),
     const discussion(),
     const fav(),
   ];
