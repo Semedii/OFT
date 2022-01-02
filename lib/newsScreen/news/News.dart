@@ -6,6 +6,8 @@ import 'package:term_roject/Model/NewsMode.dart';
 import 'package:http/http.dart' as http;
 import 'package:term_roject/newsScreen/news/NewsWidget.dart';
 
+import 'NewsDescription.dart';
+
 
 class UserNews  extends StatefulWidget {
   @override
@@ -72,9 +74,19 @@ class _UserNewsState extends State<UserNews> {
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.white)
                 ),
-                child: NewsCard(
-                  title: e.title,
-                  imgurl: e.imgurl
+                child: GestureDetector(
+                     onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => newsDetail(
+                                  Description: e.Description,
+                                  imgurl: e.imgurl)));
+                    },
+                  child: NewsCard(
+                    title: e.title,
+                    imgurl: e.imgurl
+                  ),
                 ),
               )).toList()         
         ],
