@@ -20,7 +20,7 @@ class _nonUserDiscussionState extends State<nonUserDiscussion> {
 
   ];
    Future<void> fetchDiscussions() async{
-    final url =Uri.parse("https://otf-score-902d5-default-rtdb.firebaseio.com/Discussions.json");
+    final url =Uri.parse("https://oftscore-default-rtdb.firebaseio.com/Discussions.json");
     try{
     final response = await http.get(url);
     final extractedData = json.decode(response.body) as Map<String, dynamic>;

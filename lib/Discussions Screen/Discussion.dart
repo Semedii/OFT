@@ -20,7 +20,7 @@ class _discussionState extends State<discussion> {
 
   ];
    Future<void> fetchDiscussions() async{
-    final url =Uri.parse("https://otf-score-902d5-default-rtdb.firebaseio.com/Discussions.json");
+    final url =Uri.parse("https://oftscore-default-rtdb.firebaseio.com/Discussions.json");
     try{
     final response = await http.get(url);
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -43,7 +43,7 @@ class _discussionState extends State<discussion> {
     }
   }
    void _addNewDiscussion(String Team1, String Team2, DateTime Date, String Time, String Prediction) {
-    final url = Uri.parse("https://otf-score-902d5-default-rtdb.firebaseio.com/Discussions.json");
+    final url = Uri.parse("https://oftscore-default-rtdb.firebaseio.com/Discussions.json");
     http.post(url, body: json.encode({
       'Team1': Team1,
       'Team2': Team2,

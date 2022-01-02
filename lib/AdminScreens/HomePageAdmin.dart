@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:term_roject/Model/Matches.dart';
+import 'package:term_roject/homeScreens/drawerLoggedIn.dart';
 import 'package:term_roject/homeScreens/newMatch.dart';
 import 'package:term_roject/homeScreens/MatchDetail.dart';
 import 'package:term_roject/homeScreens/Widgets.dart';
@@ -39,10 +40,11 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
   ];
 
   Future<void> fetchmatches() async{
-    final url =Uri.parse("https://otf-score-902d5-default-rtdb.firebaseio.com/matches.json");
+    final url =Uri.parse("https://oftscore-default-rtdb.firebaseio.com/matches.json");
     try{
     final response = await http.get(url);
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
+
      final List<Matches> LoadedList = [];
     extractedData.forEach((key, value) {
      LoadedList.add(Matches(
@@ -52,7 +54,8 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
        League: value["League"], 
        referee: value["referee"], 
        Stadium: value["Stadium"], 
-       Time: value["Time"], 
+       Time: value["Time"],
+       id: key,
        Date: DateFormat("yyyy-MM-dd hh:mm:ss").parse(value["Date"])));
 
     });
@@ -65,7 +68,8 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
     }
   }
   void _addNewMatch(String Team1, String Team2, String img, String league, String Stadium, String refree, DateTime date, String time) {
-    final url = Uri.parse("https://otf-score-902d5-default-rtdb.firebaseio.com/matches.json");
+    final url = Uri.parse("https://oftscore-default-rtdb.firebaseio.com/matches.json");
+
     http.post(url, body: json.encode({
       'Team1': Team1,
       'Team2': Team2,
@@ -86,6 +90,7 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
       referee: refree,
       Date: date,
       Time: time,
+      id: "",
     );
 
     setState(() {
@@ -96,6 +101,19 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
   //   print(MatchList[i].Team1);
   // }
   }
+   Future<void> deleteMatch(String ID) {
+
+     print(ID);
+     final url = Uri.parse(
+         "https://oftscore-default-rtdb.firebaseio.com/matches/$ID.json");
+     print("${url.toString()} pri");
+     return http.delete(url).then((response) {
+      // print(response.body);
+
+      MatchList.removeWhere((element) => element.id == ID);
+
+     });
+   }
  
   
 
@@ -113,14 +131,17 @@ void _ShowAddingBox(BuildContext ctx) {
   }
   void initState(){
    fetchmatches();
+
   }
+
   
   @override
   Widget build(BuildContext context) {
-    
+
+
     return Scaffold(
       backgroundColor: Color(0xFF5a5a5a),
-      drawer: DrawerScreen(),
+      drawer: DrawerScreenL(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Color (0xff12c387),
@@ -147,6 +168,7 @@ void _ShowAddingBox(BuildContext ctx) {
             ...MatchList.map((e) =>
             GestureDetector(
                 onTap: (){
+
                   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MatchDetailScreen(
                       Team1: e.Team1,
                       Team2: e.Team2,
@@ -160,7 +182,17 @@ void _ShowAddingBox(BuildContext ctx) {
                 },
             
                 
-                    child: matches(Team1: e.Team1,Team2: e.Team2, imageurl: e.ImageUrl))
+                    child: Dismissible(
+                        key: UniqueKey(),
+                        onDismissed: (direction){
+                          setState(() {
+                            deleteMatch(e.id);
+                            MatchList.removeWhere((element) => element.id==e.id);
+                          });
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(SnackBar(content: Text('Sucessfully Deleted')));
+                        },
+                        child: matches(Team1: e.Team1,Team2: e.Team2, imageurl: e.ImageUrl)))
             ).toList(),
             
 

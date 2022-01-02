@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   Future<void> fetchmatches() async{
-    final url =Uri.parse("https://otf-score-902d5-default-rtdb.firebaseio.com/matches.json");
+    final url =Uri.parse("https://oftscore-default-rtdb.firebaseio.com/matches.json");
     try{
     final response = await http.get(url);
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -52,7 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
        League: value["League"], 
        referee: value["referee"], 
        Stadium: value["Stadium"], 
-       Time: value["Time"], 
+       Time: value["Time"],
+         id: key,
        Date: DateFormat("yyyy-MM-dd hh:mm:ss").parse(value["Date"])));
 
     });
