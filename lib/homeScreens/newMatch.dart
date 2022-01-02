@@ -82,7 +82,7 @@ class _NewMatchState extends State<NewMatch> {
               ]),
               TextField(
                   decoration: InputDecoration(
-                    labelText: "ImageUrl",
+                    labelText: "ImageUrl ",
                   ),
                   controller: imgController),
               Row(
