@@ -134,8 +134,7 @@ class _AdminNewsState extends State<AdminNews> {
                         onDismissed: (direction) {
                           setState(() {
                             deleteNews(e.id);
-                            newslist
-                                .removeWhere((element) => element.id == e.id);
+                            newslist.removeWhere((element) => element.id == e.id);
                           });
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text('Sucessfully Deleted')));
