@@ -20,7 +20,7 @@ class _UserNewsState extends State<UserNews> {
     // imgurl: "https://th.bing.com/th/id/R.06a1cf5149af89a5ab16be1e1d7ef4cd?rik=FJtYyTKTfk3%2bWA&riu=http%3a%2f%2fwww.jogadores.pt%2fwp-content%2fuploads%2f2016%2f08%2f000_C34TX.jpg&ehk=DRz311CAD54jA5TLDyJTvSlpJqEwiJB9tYfaspxLpVs%3d&risl=&pid=ImgRaw&r=0", 
     ];
      Future<void> fetchNews() async{
-    final url =Uri.parse("XXXXXXXXXXXX/News.json");
+    final url =Uri.parse("XxxXXXXXXXXXXX/News.json");
     try{
     final response = await http.get(url);
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
