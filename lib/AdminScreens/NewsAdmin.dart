@@ -21,7 +21,7 @@ class _AdminNewsState extends State<AdminNews> {
 
   Future<void> fetchNews() async {
     final url =
-        Uri.parse("https://oftscore-default-rtdb.firebaseio.com/News.json");
+        Uri.parse("XXXXXXXXXX/News.json");
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -43,7 +43,7 @@ class _AdminNewsState extends State<AdminNews> {
 
   void _addNewNews(String ImgUrl, String Title, String Description) {
     final url =
-        Uri.parse("https://oftscore-default-rtdb.firebaseio.com/News.json");
+        Uri.parse("XXXXXXXXXXXXXXXXXXXXXX/News.json");
     http.post(url,
         body: json.encode({
           'Imgurl': ImgUrl,
@@ -73,7 +73,7 @@ class _AdminNewsState extends State<AdminNews> {
   Future<void> deleteNews(String ID) {
     print(ID);
     final url =
-        Uri.parse("https://oftscore-default-rtdb.firebaseio.com/News/$ID.json");
+        Uri.parse("XXXXXXXXXXXXXXXX/News/$ID.json");
     print("${url.toString()} pri");
     return http.delete(url).then((response) {
       // print(response.body);

@@ -40,7 +40,7 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
   ];
 
   Future<void> fetchmatches() async{
-    final url =Uri.parse("https://oftscore-default-rtdb.firebaseio.com/matches.json");
+    final url =Uri.parse("XXXXXXXXXXXXXXXXX/matches.json");
     try{
     final response = await http.get(url);
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -68,7 +68,7 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
     }
   }
   void _addNewMatch(String Team1, String Team2, String img, String league, String Stadium, String refree, DateTime date, String time) {
-    final url = Uri.parse("https://oftscore-default-rtdb.firebaseio.com/matches.json");
+    final url = Uri.parse("XXXXXXXXXXXX/matches.json");
 
     http.post(url, body: json.encode({
       'Team1': Team1,
@@ -105,7 +105,7 @@ class _MyHomePageAdminState extends State<MyHomePageAdmin> {
 
      print(ID);
      final url = Uri.parse(
-         "https://oftscore-default-rtdb.firebaseio.com/matches/$ID.json");
+         "XXXXXXXXXXXXXXXXX/matches/$ID.json");
      print("${url.toString()} pri");
      return http.delete(url).then((response) {
       // print(response.body);
